@@ -25,7 +25,7 @@ enum Landing
     //Here you define your enums for each use case in your scene. Each network request or process should have three structures
     // -Request: This houses the request parameters for your request
     // -Response: This structure comprises the response from your api call, database call or whatever method call you make
-    // - Model: This houses the models which you would need to send to the viewController's display logic to be displayed to the user
+    // - Model: This houses the viewModels which you would need to send to the viewController's display logic to be displayed to the user
     enum fetchDataOnLoad {
         struct Request {
             //viewcontroller
