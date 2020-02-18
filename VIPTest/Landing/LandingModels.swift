@@ -28,21 +28,19 @@ enum Landing
     // - Model: This houses the viewModels which you would need to send to the viewController's display logic to be displayed to the user
     enum fetchDataOnLoad {
         struct Request {
-            //viewcontroller
-            //interactor
+            //can be used by viewcontroller
+            //can be used by interactor
             var id: String
         }
         
         struct Response {
+            //Presenter recieves this data and converts to viewModel
             var user: user
         }
         
         struct ViewModel {
+            //ViewController takes this and displays to the user
             var userViewModel: UserViewModel = UserViewModel()
         }
-    }
-    
-    enum FetchdataOnExit {
-        
     }
 }
