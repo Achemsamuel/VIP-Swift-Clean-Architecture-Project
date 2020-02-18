@@ -39,29 +39,3 @@ enum Landing
         
     }
 }
-
-struct user {
-    var age: Int
-    var name: String
-    var country: String
-    var eyeColor: String
-    var wardrobeType: String
-    var familyName: String
-}
-
-struct UserViewModel {
-    var name: String = ""
-    var age: Int = 0
-    var familyName: String = ""
-}
-
-extension user {
-    func toviewModel() -> UserViewModel {
-        var userVM = UserViewModel()
-        userVM.name = name
-        userVM.age = age
-        userVM.familyName = familyName
-        
-        return userVM
-    }
-}
