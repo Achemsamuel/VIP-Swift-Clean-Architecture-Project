@@ -14,11 +14,18 @@ import UIKit
 
 enum Landing
 {
+    
+    //MARK: Global viewModel
+    //This is a collation of all the sub-viewModels from our various use cases. This is sorely for the viewController's use.
     struct ViewModel {
         var userVM = UserViewModel()
     }
     
     // MARK: Use cases
+    //Here you define your enums for each use case in your scene. Each network request or process should have three structures
+    // -Request: This houses the request parameters for your request
+    // -Response: This structure comprises the response from your api call, database call or whatever method call you make
+    // - Model: This houses the models which you would need to send to the viewController's display logic to be displayed to the user
     enum fetchDataOnLoad {
         struct Request {
             //viewcontroller

@@ -12,7 +12,7 @@
 
 import UIKit
 
-class LandingViewController: UIViewController, LandingDisplayLogic
+class LandingViewController: UIViewController
 {
     var interactor: LandingBusinessLogic?
     var router: (NSObjectProtocol & LandingRoutingLogic & LandingDataPassing)?
@@ -74,8 +74,16 @@ class LandingViewController: UIViewController, LandingDisplayLogic
     func initialSetup() {
         interactor?.fetchDataOnLoad(request: Landing.fetchDataOnLoad.Request(id: "Macco"))
     }
+        
     
-    // MARK: Do something
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        router?.routeToDetailScene(segue: nil)
+    }
+    
+}
+
+extension LandingViewController: LandingDisplayLogic {
     
     func displayDataOnLoad(viewModel: Landing.fetchDataOnLoad.ViewModel) {
         self.viewModel.userVM = viewModel.userViewModel
@@ -88,9 +96,4 @@ class LandingViewController: UIViewController, LandingDisplayLogic
         self.countryLabel.text = self.viewModel.userVM.familyName
         self.nameLabel.text = self.viewModel.userVM.name
     }
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        router?.routeToDetailScene(segue: nil)
-    }
-    
 }

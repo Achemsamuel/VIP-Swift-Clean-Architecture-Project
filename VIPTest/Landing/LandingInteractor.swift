@@ -15,7 +15,6 @@ import UIKit
 protocol LandingBusinessLogic: DataDelegate
 {
     func fetchDataOnLoad(request: Landing.fetchDataOnLoad.Request)
-    func fetchDataOnExit()
 }
 
 protocol LandingDataStore
@@ -32,15 +31,11 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
   var presenter: LandingPresentationLogic?
 
     func fetchDataOnLoad(request: Landing.fetchDataOnLoad.Request) {
-        let userObject = user(age: 23, name: "Emmanuel", country: "Nigeria", eyeColor: "blue", wardrobeType: "native", familyName: "Okwara")
+        let userObject = user(age: 23, name: "Emmanuel", country: "Nigeria", eyeColor: "blue", wardrobeType: "native", familyName: "Okwara") //Dummy user request response
         let response = Landing.fetchDataOnLoad.Response(user: userObject)
         self.User = userObject
         self.userVm = userObject.toviewModel()
         presenter?.presentDataOnLoad(response: response)
-    }
-    
-    func fetchDataOnExit() {
-        
     }
     
     func passDataBack(user: user) {
