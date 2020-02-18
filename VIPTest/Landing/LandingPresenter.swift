@@ -27,7 +27,7 @@ class LandingPresenter: LandingPresentationLogic
   
     func presentDataOnLoad(response: Landing.fetchDataOnLoad.Response) {
         //print(response.user.age, response.user.name, response.user.familyName)
-        let viewModel = Landing.fetchDataOnLoad.ViewModel(userViewModel: response.user.toviewModel())
+        let viewModel = Landing.fetchDataOnLoad.ViewModel(userViewModel: response.user.toviewModel()) //response converted to viewModel for the viewController's use
         viewController?.displayDataOnLoad(viewModel: viewModel)
     }
 }

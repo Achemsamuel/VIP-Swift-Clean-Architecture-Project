@@ -38,6 +38,7 @@ class LandingRouter: NSObject, LandingRoutingLogic, LandingDataPassing
     }
     
     func passDataToDetail(source: LandingDataStore, destination: inout DetailDataStore) {
+        //Both stores communicate with other and you share as much data as you would want to between them
         destination.User = source.User
         destination.userVm = source.userVm
     }

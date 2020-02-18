@@ -32,7 +32,7 @@ class LandingInteractor: LandingBusinessLogic, LandingDataStore
 
     func fetchDataOnLoad(request: Landing.fetchDataOnLoad.Request) {
         let userObject = user(age: 23, name: "Emmanuel", country: "Nigeria", eyeColor: "blue", wardrobeType: "native", familyName: "Okwara") //Dummy user request response
-        let response = Landing.fetchDataOnLoad.Response(user: userObject)
+        let response = Landing.fetchDataOnLoad.Response(user: userObject) //response for the presenter
         self.User = userObject
         self.userVm = userObject.toviewModel()
         presenter?.presentDataOnLoad(response: response)
